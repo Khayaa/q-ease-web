@@ -12,6 +12,6 @@ class QueueController extends Controller
         $queues = Queue::all();
 
 
-        return response()->json();
+        return response()->json($queues);
     }
 }
