@@ -46,6 +46,7 @@ class AuthController extends Controller
     }
 
     public function login(Request $request){
+
         $request->validate([
             'email' => 'required|email',
             'password' => 'required',
@@ -64,7 +65,6 @@ class AuthController extends Controller
         $token = $user->createToken($request->device_name)->plainTextToken;
 
         return response()->json([
-        'role_id' => $user->role_id,
         'token' => $token,
         'message' => 'You have logged in successfully',
         'user' => $user,
