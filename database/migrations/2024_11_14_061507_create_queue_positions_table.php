@@ -13,13 +13,13 @@ return new class extends Migration
     {
         Schema::create('queue_positions', function (Blueprint $table) {
             $table->id();
-    $table->foreignId('user_id')->constrained()->onDelete('cascade');
-    $table->foreignId('queue_id')->constrained()->onDelete('cascade');
-    $table->integer('position')->nullable(); // User's position in the queue
-    $table->integer('estimated_time')->default(0); // Estimated wait time for the user
-    $table->boolean('check_in_status')->default(false); // Check-in status
-    $table->boolean('notification_sent')->default(false); // Notification status
-    $table->timestamps();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->foreignId('queue_id')->constrained()->onDelete('cascade');
+            $table->integer('position')->nullable(); // User's position in the queue
+            $table->integer('estimated_time')->default(0); // Estimated wait time for the user
+            $table->boolean('check_in_status')->default(false); // Check-in status
+            $table->boolean('notification_sent')->default(false); // Notification status
+            $table->timestamps();
         });
     }
 
